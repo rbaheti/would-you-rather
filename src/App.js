@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import {getInitialData} from "./utils/api";
 import NavBar from "./Components/NavBar";
+import UserScoreCard from "./Components/UserScoreCard";
 
 
 class App extends Component {
@@ -22,11 +23,15 @@ class App extends Component {
   }
 
   render() {
+    const {users} = this.state;
+    if (users === null) return <div></div>;
+
+    const usersArr = Object.entries(users);
 
     return (
       <div>
         <NavBar />
-        {JSON.stringify(this.state.users)}
+        <UserScoreCard user={usersArr[0]}/>
       </div>
     );
   }
