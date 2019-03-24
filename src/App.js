@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Navbar, Nav, Form, FormControl, Button } from 'react-bootstrap';
-import { getInitialData } from './utils/api'
+import React, {Component} from "react";
+import "./App.css";
+import {getInitialData} from "./utils/api";
+import NavBar from "./Components/NavBar";
 
 
 class App extends Component {
@@ -14,17 +14,20 @@ class App extends Component {
     };
   }
 
-  componentDidMount () {
+  componentDidMount() {
     getInitialData()
-    .then(({ users, questions }) => {
-      this.setState({users, questions});
-    });
+      .then(({users, questions}) => {
+        this.setState({users, questions});
+      });
   }
 
   render() {
 
     return (
-      <div>{JSON.stringify(this.state.users)}</div>
+      <div>
+        <NavBar />
+        {JSON.stringify(this.state.users)}
+      </div>
     );
   }
 }
