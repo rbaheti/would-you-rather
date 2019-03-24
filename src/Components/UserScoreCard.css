@@ -1,0 +1,9 @@
+.userScoreCard {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.verticalAlignMiddle {
+  vertical-align: middle;
+}
