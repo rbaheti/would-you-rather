@@ -2,7 +2,7 @@ import React, {Component} from "react";
 import "./App.css";
 import {getInitialData} from "./utils/api";
 import NavBar from "./Components/NavBar";
-import UserScoreCard from "./Components/UserScoreCard";
+import LeaderBoard from "./Components/LeaderBoard";
 
 
 class App extends Component {
@@ -26,12 +26,10 @@ class App extends Component {
     const {users} = this.state;
     if (users === null) return <div></div>;
 
-    const usersArr = Object.entries(users);
-
     return (
       <div>
         <NavBar />
-        <UserScoreCard user={usersArr[0]}/>
+        <LeaderBoard users={users}/>
       </div>
     );
   }
