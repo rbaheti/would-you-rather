@@ -21,11 +21,11 @@ class UserScoreCard extends Component {
   render() {
 
     const {user} = this.props;
-    const name = user[1].name;
-    const numOfAns = Object.keys(user[1].answers).length;
-    const numOfQuestions = user[1].questions.length;
+    const name = user.name;
+    const numOfAns = Object.keys(user.answers).length;
+    const numOfQuestions = user.questions.length;
     const scores = numOfAns + numOfQuestions;
-    const image = getAvatar(user[1].avatarURL);
+    const image = getAvatar(user.avatarURL);
 
     return (
       <Card style={{width: "30rem"}}>
