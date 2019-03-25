@@ -10,8 +10,8 @@ class NavBar extends Component {
         <Navbar bg="dark" variant="dark">
           <Nav className="mr-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#features">New Question</Nav.Link>
-            <Nav.Link href="#pricing">Leader Board</Nav.Link>
+            <Nav.Link href="/new">New Question</Nav.Link>
+            <Nav.Link href="/leaderboard">Leader Board</Nav.Link>
           </Nav>
         </Navbar>
       </div>

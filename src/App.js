@@ -1,9 +1,10 @@
-import React, {Component} from "react";
+import React, {Component, Fragment} from "react";
+import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.css";
 import {connect} from "react-redux";
-import {getInitialData} from "./utils/api";
 import NavBar from "./Components/NavBar";
 import LeaderBoard from "./Components/LeaderBoard";
+import NewQuestion from "./Components/NewQuestion";
 import {handleInitialData} from "./actions/shared";
 
 
@@ -14,12 +15,18 @@ class App extends Component {
   }
 
   render() {
-
     return (
-      <div>
-        <NavBar />
-        <LeaderBoard/>
-      </div>
+      <Router>
+        <Fragment>
+          <div className="container">
+            <NavBar />
+            <div>
+              <Route path="/leaderboard" exact component={LeaderBoard} />
+              <Route path="/new" component={NewQuestion} />
+            </div>
+          </div>
+        </Fragment>
+      </Router>
     );
   }
 }
