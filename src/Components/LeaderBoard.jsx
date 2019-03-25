@@ -1,15 +1,15 @@
 import React, {Component} from "react";
+import {connect} from "react-redux";
 import UserScoreCard from "./UserScoreCard";
 
 class LeaderBoard extends Component {
 
-  constructor(props) {
-    super(props);
-  }
-
   render() {
 
     const {users} = this.props;
+    if (users === undefined) {
+      return <div></div>;
+    }
 
     const usersArr = Object.values(users);
     usersArr.sort((a, b) => {
@@ -26,4 +26,8 @@ class LeaderBoard extends Component {
   }
 }
 
-export default LeaderBoard;
+const mapSateToProps = state => ({
+  users: state.users
+});
+
+export default connect(mapSateToProps)(LeaderBoard);
