@@ -1,38 +1,27 @@
 import React, {Component} from "react";
 import "./App.css";
+import {connect} from "react-redux";
 import {getInitialData} from "./utils/api";
 import NavBar from "./Components/NavBar";
 import LeaderBoard from "./Components/LeaderBoard";
+import {handleInitialData} from "./actions/shared";
 
 
 class App extends Component {
 
-  constructor(props) {
-    super(props);
-    this.state = {
-      users: null,
-      questions: null
-    };
-  }
-
   componentDidMount() {
-    getInitialData()
-      .then(({users, questions}) => {
-        this.setState({users, questions});
-      });
+    this.props.dispatch(handleInitialData());
   }
 
   render() {
-    const {users} = this.state;
-    if (users === null) return <div></div>;
 
     return (
       <div>
         <NavBar />
-        <LeaderBoard users={users}/>
+        <LeaderBoard/>
       </div>
     );
   }
 }
 
-export default App;
+export default connect()(App);
