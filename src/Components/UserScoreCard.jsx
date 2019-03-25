@@ -28,7 +28,7 @@ class UserScoreCard extends Component {
     const image = getAvatar(user.avatarURL);
 
     return (
-      <Card style={{width: "30rem"}}>
+      <Card style={{width: "30rem"}} className="m-3">
         <Card.Body>
           <Card.Title>{name}</Card.Title>
         </Card.Body>
