@@ -27,8 +27,7 @@ class LeaderBoard extends Component {
 }
 
 const mapSateToProps = state => ({
-  users: state.users,
-  questions: state.questions
+  users: state.users
 });
 
 export default connect(mapSateToProps)(LeaderBoard);
