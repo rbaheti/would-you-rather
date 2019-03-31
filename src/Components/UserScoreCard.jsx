@@ -1,17 +1,7 @@
 import React, {Component} from "react";
 import Card from "react-bootstrap/Card";
 import {Container, Row, Col,  ListGroup, ListGroupItem} from "react-bootstrap";
-import man from "../images/man.png";
-import boy from "../images/boy.png";
-import girl from "../images/girl.png";
-import noAvatar from "../images/noAvatar.png";
-
-const getAvatar = avatar => {
-  if (avatar === "boy") return boy;
-  if (avatar === "man") return man;
-  if (avatar === "girl") return girl;
-  return noAvatar;
-};
+import {getAvatar} from "../utils/helper";
 
 class UserScoreCard extends Component {
 
