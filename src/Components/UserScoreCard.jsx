@@ -26,7 +26,7 @@ class UserScoreCard extends Component {
         <Container>
           <Row>
             <Col sm={2}>
-              <img src={image} alt="man" width="50" height="60"/>
+              <img src={image} alt={user.avatarURL} width="50" height="60"/>
             </Col>
             <Col sm={6}>
               <ListGroup className="list-group-flush">
