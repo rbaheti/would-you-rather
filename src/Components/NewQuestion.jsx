@@ -1,8 +1,8 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Form, Button, Card} from "react-bootstrap";
-import {saveQuestion} from "../utils/api";
 
+import {saveQuestion} from "../utils/api";
 import {handleInitialData} from "../actions/shared";
 
 class NewQuestion extends Component {
