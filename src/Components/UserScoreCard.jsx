@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import Card from "react-bootstrap/Card";
 import {Container, Row, Col,  ListGroup, ListGroupItem} from "react-bootstrap";
+
 import {getAvatar} from "../utils/helper";
 
 class UserScoreCard extends Component {

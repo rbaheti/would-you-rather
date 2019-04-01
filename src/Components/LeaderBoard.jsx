@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+
 import UserScoreCard from "./UserScoreCard";
 
 class LeaderBoard extends Component {
