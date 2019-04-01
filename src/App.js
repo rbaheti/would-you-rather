@@ -2,10 +2,12 @@ import React, {Component, Fragment} from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import "./App.css";
 import {connect} from "react-redux";
+
 import NavBar from "./Components/NavBar";
 import Home from "./Components/Home";
 import LeaderBoard from "./Components/LeaderBoard";
 import NewQuestion from "./Components/NewQuestion";
+import Vote from "./Components/Vote";
 import {handleInitialData} from "./actions/shared";
 
 class App extends Component {
@@ -24,6 +26,7 @@ class App extends Component {
               <Route path="/home" exact component={Home} />
               <Route path="/leaderboard" exact component={LeaderBoard} />
               <Route path="/new" exact component={NewQuestion} />
+              <Route path="/view-poll/:qid" exact component={Vote} />
             </div>
           </div>
         </Fragment>
