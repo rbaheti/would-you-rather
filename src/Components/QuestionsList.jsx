@@ -14,23 +14,32 @@ class QuestionsList extends Component {
   }
   
   state = {
-    redirect: false
+    redirectToStats: false,
+    redirectToPoll: false
   }
   
-  renderRedirect = id => {
-    if (this.state.redirect) {
+  renderRedirectToPoll = id => {
+    if (this.state.redirectToPoll) {
       return <Redirect to={`/view-poll/${id}`} />;
     }
     return null;
   }
 
-  handleOnSubmit = e => {
+  renderRedirectToStats = id => {
+    if (this.state.redirectToStats) {
+      return <Redirect to={`/poll-stats/${id}`} />;
+    }
+    return null;
+  }
+
+  handleOnSubmit = (e, answeredTabKeySelected) => {
     e.preventDefault();
-    this.setState({redirect: true});
+    answeredTabKeySelected ? this.setState({redirectToStats: true}) : this.setState({redirectToPoll: true});
+    // this.setState({redirect: true});
   }
 
   render() {
-    const {question} = this.props;
+    const {question, answeredTabKey} = this.props;
 
     const image = getAvatar(question.user.avatarURL);
     const name = question.user.name;
@@ -39,7 +48,8 @@ class QuestionsList extends Component {
     
     return (
       <div>
-        {this.renderRedirect(question.id)}
+        {this.renderRedirectToPoll(question.id)}
+        {this.renderRedirectToStats(question.id)}
         <Card style={{width: "30rem"}} className="my-3">
           <Container>
             <Row className="p-3">
@@ -54,7 +64,7 @@ class QuestionsList extends Component {
                   <ListGroupItem>{questionText1}</ListGroupItem>
                   <ListGroupItem>{questionText2}</ListGroupItem>
                 </ListGroup>
-                <button type="button" className="btn btn-outline-primary btn-block m-2" onClick={this.handleOnSubmit}>View Poll</button>
+                <button type="button" className="btn btn-outline-primary btn-block m-2" onClick={e => this.handleOnSubmit(e, answeredTabKey)}>View Poll</button>
               </Col>
             </Row>
           </Container>
