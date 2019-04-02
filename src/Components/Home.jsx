@@ -48,8 +48,8 @@ class Home extends Component {
           </Nav.Item>
         </Nav>
         {this.state.selectedTabKey === unansweredTabKey
-          ? unansweredQuestions.map(item => <QuestionsList key={item.id} question={item}/>)
-          : answeredQuestions.map(item => <QuestionsList key={item.id} question={item}/>)
+          ? unansweredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={false}/>)
+          : answeredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={true}/>)
         }
       </div>
     );
