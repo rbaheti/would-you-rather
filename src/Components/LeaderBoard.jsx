@@ -9,7 +9,7 @@ class LeaderBoard extends Component {
 
     const {users} = this.props;
     if (users === undefined) {
-      return <div></div>;
+      return null;
     }
 
     const usersArr = Object.values(users);

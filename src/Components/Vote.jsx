@@ -63,7 +63,7 @@ class Vote extends Component {
             </Row>
             <Row>
               <Col sm={2}>
-                <img src={image} alt={question.user.avatarURL} width="50" height="60"/>
+                <img src={image} alt={question.user.avatarURL} width="50" height="50"/>
               </Col>
               <Col>
                 <strong>Would You Rather...</strong>
