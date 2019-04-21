@@ -54,7 +54,7 @@ class PollStats extends Component {
           </Row>
           <Row>
             <Col sm={2}>
-              <img src={image} alt={question.user.avatarURL} width="50" height="60"/>
+              <img src={image} alt={question.user.avatarURL} width="50" height="50"/>
             </Col>
             <Col>
               <h5>Results:</h5>
