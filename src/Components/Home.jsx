@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Nav} from "react-bootstrap";
 
+import Login from "./Login";
 import QuestionsList from "./QuestionsList";
 
 const unansweredTabKey = "unanswered";
@@ -23,6 +24,10 @@ class Home extends Component {
       return <div>Questions array is undefined!</div>;
     }
 
+    if (authedUser === null) {
+      return <Login />;
+    }
+
     const questionsArr = Object.values(questions);
     const unansweredQuestions = [];
     const answeredQuestions = [];
@@ -38,7 +43,7 @@ class Home extends Component {
     });
 
     return (
-      <div>
+      <div className="m-3">
         <Nav fill variant="tabs" defaultActiveKey={unansweredTabKey} onSelect={k => this.handleSelect(k)} className="border" style={{width: "30rem"}}>
           <Nav.Item>
             <Nav.Link eventKey={unansweredTabKey}>Unanswered Questions</Nav.Link>

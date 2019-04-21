@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Form, Button, Card} from "react-bootstrap";
+import {Redirect} from "react-router-dom";
 
 import {saveQuestion} from "../utils/api";
 import {handleInitialData} from "../actions/shared";
@@ -46,23 +47,32 @@ class NewQuestion extends Component {
   }
 
   render() {
+    const {authedUser} = this.props;
+    if (authedUser === null) {
+      return <Redirect to={"/"} />;
+    }
+
     return (
       <div>
-        <Form className="m-5">
-          <Form.Group controlId="formBasicEmail">
-            <Card.Title>Create the question </Card.Title>
-            <Form.Label><strong>Would you rather...</strong></Form.Label>
-            <Form.Control type="text" placeholder="Enter option one text here" value={this.state.option1} onChange={e => this.handleChange(e, "option1")} />
-          </Form.Group>
+        <Card style={{width: "30rem"}} className="m-3">
+          <Card.Body>
+            <Card.Title>Create New Question</Card.Title>
+            <Form>
+              <Form.Group controlId="formBasicEmail">
+                <Form.Label><strong>Would you rather...</strong></Form.Label>
+                <Form.Control type="text" placeholder="Enter option one text here" value={this.state.option1} onChange={e => this.handleChange(e, "option1")} />
+              </Form.Group>
 
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>OR</Form.Label>
-            <Form.Control type="text" placeholder="Enter option two text here" value={this.state.option2} onChange={e => this.handleChange(e, "option2")}/>
-          </Form.Group>
-          <Button variant="primary" type="submit" onClick={this.handleSubmit}>
+              <Form.Group controlId="formBasicPassword">
+                <Form.Label>OR</Form.Label>
+                <Form.Control type="text" placeholder="Enter option two text here" value={this.state.option2} onChange={e => this.handleChange(e, "option2")}/>
+              </Form.Group>
+              <Button variant="primary" type="submit" onClick={this.handleSubmit} block>
             Submit
-          </Button>
-        </Form>
+              </Button>
+            </Form>
+          </Card.Body>
+        </Card>
       </div>
     );
   }

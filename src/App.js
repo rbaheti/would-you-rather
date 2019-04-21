@@ -25,6 +25,7 @@ class App extends Component {
             <NavBar />
             <div>
               <Route path="/" exact component={Home} />
+              <Route path="/home" exact component={Home} />
               <Route path="/leaderboard" exact component={LeaderBoard} />
               <Route path="/new" exact component={NewQuestion} />
               <Route path="/view-poll/:qid" exact component={Vote} />

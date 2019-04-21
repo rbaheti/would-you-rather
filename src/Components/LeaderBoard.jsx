@@ -1,13 +1,18 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 import UserScoreCard from "./UserScoreCard";
 
 class LeaderBoard extends Component {
 
   render() {
+    const {authedUser, users} = this.props;
+    
+    if (authedUser === null) {
+      return <Redirect to={"/"} />;
+    }
 
-    const {users} = this.props;
     if (users === undefined) {
       return null;
     }
@@ -28,6 +33,7 @@ class LeaderBoard extends Component {
 }
 
 const mapSateToProps = state => ({
+  authedUser: state.authedUser,
   users: state.users
 });
 

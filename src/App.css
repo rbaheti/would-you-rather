@@ -2,6 +2,12 @@
   text-align: center;
 }
 
+body {
+  /* This always keep the scrollbar on. This prevents top NavBar from
+  shifting to left when vertical scrollbar needs to be shown for a NavLink. */
+  overflow-y: scroll;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -21,6 +27,10 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.dropdown-menu {
+  width: 100%
 }
 
 @keyframes App-logo-spin {

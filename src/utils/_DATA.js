@@ -11,9 +11,9 @@ let users = {
     },
     questions: ["8xf0y6ziyjabvozdd253nd", "am8ehyc8byjqgar0jgpub9"]
   },
-  tylermcginnis: {
-    id: "tylermcginnis",
-    name: "Tyler McGinnis",
+  kevinhart: {
+    id: "kevinhart",
+    name: "Kevin Hart",
     avatarURL: "boy",
     answers: {
       vthrdm985a262al8qx3do: "optionOne",
@@ -31,6 +31,27 @@ let users = {
       "6ni6ok3ym7mf1p33lnez": "optionTwo"
     },
     questions: ["6ni6ok3ym7mf1p33lnez", "xj352vofupe1dqz9emx13r"]
+  },
+  henna: {
+    id: "henna",
+    name: "Henna Williams",
+    avatarURL: "girl2",
+    answers: {},
+    questions: []
+  },
+  meghan: {
+    id: "meghan",
+    name: "Meghan Miller",
+    avatarURL: "girl3",
+    answers: {},
+    questions: []
+  },
+  yasmeen: {
+    id: "yasmeen",
+    name: "Yasmeen Amari",
+    avatarURL: "girl4",
+    answers: {},
+    questions: []
   }
 };
 
@@ -76,7 +97,7 @@ let questions = {
   },
   "loxhs1bqm25b708cmbf3g": {
     id: "loxhs1bqm25b708cmbf3g",
-    author: "tylermcginnis",
+    author: "kevinhart",
     timestamp: 1482579767190,
     optionOne: {
       votes: [],
@@ -89,10 +110,10 @@ let questions = {
   },
   "vthrdm985a262al8qx3do": {
     id: "vthrdm985a262al8qx3do",
-    author: "tylermcginnis",
+    author: "kevinhart",
     timestamp: 1489579767190,
     optionOne: {
-      votes: ["tylermcginnis"],
+      votes: ["kevinhart"],
       text: "find $50 yourself"
     },
     optionTwo: {
@@ -109,7 +130,7 @@ let questions = {
       text: "write JavaScript"
     },
     optionTwo: {
-      votes: ["tylermcginnis"],
+      votes: ["kevinhart"],
       text: "write Swift"
     }
   }

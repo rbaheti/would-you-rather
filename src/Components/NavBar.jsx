@@ -10,7 +10,7 @@ class NavBar extends Component {
         <Navbar bg="dark" variant="dark">
           <Nav className="mr-auto">
             <Nav.Item>
-              <Nav.Link as={NavLink} to="/">Home</Nav.Link>
+              <Nav.Link as={NavLink} to="/home">Home</Nav.Link>
             </Nav.Item>
             <Nav.Item>
               <Nav.Link as={NavLink} to="/new">New Question</Nav.Link>
