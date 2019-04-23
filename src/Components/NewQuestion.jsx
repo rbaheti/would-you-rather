@@ -69,7 +69,7 @@ class NewQuestion extends Component {
                   <Form.Control type="text" placeholder="Enter option two text here" value={this.state.option2} onChange={e => this.handleChange(e, "option2")}/>
                 </Form.Group>
                 <Button variant="primary" type="submit" onClick={this.handleSubmit} block>
-                  Submit
+            Submit
                 </Button>
               </Form>
             </Card.Body>

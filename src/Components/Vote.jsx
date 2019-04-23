@@ -55,39 +55,39 @@ class Vote extends Component {
     
     return (
       <div className="d-flex justify-content-center">
-        <div className="d-flex flex-column">
-          {this.renderRedirect(question.id)}
-          <Card style={{width: "30rem"}} className="my-3">
-            <Container>
-              <Row className="p-3">
-                <strong>{name} asks...</strong>
-              </Row>
-              <Row>
-                <Col sm={2}>
-                  <img src={image} alt={question.user.avatarURL} width="50" height="50"/>
-                </Col>
-                <Col>
-                  <strong>Would You Rather...</strong>
-                  <Form.Check 
-                    type={"radio"}
-                    id={"questionText1"}
-                    name="questionRadio"
-                    label={questionText1}
-                    ref={select => this.answerChoice = select}
-                    defaultChecked
-                  />
-                  <Form.Check 
-                    type={"radio"}
-                    id={"questionText2"}
-                    name="questionRadio"
-                    label={questionText2}
-                  />
-                  <button type="button" className="btn btn-outline-primary btn-block m-2" onClick={e => this.handleOnSubmit(e, question)}>Submit</button>
-                </Col>
-              </Row>
-            </Container>
-          </Card>
-        </div>
+      <div className="d-flex flex-column">
+        {this.renderRedirect(question.id)}
+        <Card style={{width: "30rem"}} className="my-3">
+          <Container>
+            <Row className="p-3">
+              <strong>{name} asks...</strong>
+            </Row>
+            <Row>
+              <Col sm={2}>
+                <img src={image} alt={question.user.avatarURL} width="50" height="50"/>
+              </Col>
+              <Col>
+                <strong>Would You Rather...</strong>
+                <Form.Check 
+                  type={"radio"}
+                  id={"questionText1"}
+                  name="questionRadio"
+                  label={questionText1}
+                  ref={select => this.answerChoice = select}
+                  defaultChecked
+                />
+                <Form.Check 
+                  type={"radio"}
+                  id={"questionText2"}
+                  name="questionRadio"
+                  label={questionText2}
+                />
+                <button type="button" className="btn btn-outline-primary btn-block m-2" onClick={e => this.handleOnSubmit(e, question)}>Submit</button>
+              </Col>
+            </Row>
+          </Container>
+        </Card>
+      </div>
       </div>
     );
   }
