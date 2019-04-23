@@ -8,7 +8,6 @@ class LeaderBoard extends Component {
 
   render() {
     const {authedUser, users} = this.props;
-    
     if (authedUser === null) {
       return <Redirect to={"/"} />;
     }
@@ -25,8 +24,10 @@ class LeaderBoard extends Component {
     });
 
     return (
-      <div>
-        {usersArr.map(user => <UserScoreCard key={user.id} user={user}/>)}
+      <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column">
+          {usersArr.map(user => <UserScoreCard key={user.id} user={user}/>)}
+        </div>
       </div>
     );
   }

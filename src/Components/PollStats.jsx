@@ -47,35 +47,39 @@ class PollStats extends Component {
     const optionTwoVotesShare = Math.floor(optionTwoVotes / total * 100);
     
     return (
-      <Card style={{width: "30rem"}} className="my-3">
-        <Container>
-          <Row className="p-3">
-            <strong>Asked by {name}</strong>
-          </Row>
-          <Row>
-            <Col sm={2}>
-              <img src={image} alt={question.user.avatarURL} width="50" height="50"/>
-            </Col>
-            <Col>
-              <h5>Results:</h5>
-              <Card className="my-3">
-                <Container>
-                  <p>Would you rather {questionText1}</p>
-                  <ProgressBar style={{height: "1.5rem"}} variant="info" now={optionOneVotesShare} label={`${optionOneVotesShare}%`}/>
-                  <div className="text-center">{optionOneVotes} out of {total}</div>
-                </Container>
-              </Card>
-              <Card className="my-3">
-                <Container>
-                  <p>Would you rather {questionText2}</p>
-                  <ProgressBar style={{height: "1.5rem"}} variant="info" now={optionTwoVotesShare} label={`${optionTwoVotesShare}%`}/>
-                  <div className="text-center">{optionTwoVotes} out of {total}</div>
-                </Container>
-              </Card>
-            </Col>
-          </Row>
-        </Container>
-      </Card>
+      <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column">
+          <Card style={{width: "30rem"}} className="my-3">
+            <Container>
+              <Row className="p-3">
+                <strong>Asked by {name}</strong>
+              </Row>
+              <Row>
+                <Col sm={2}>
+                  <img src={image} alt={question.user.avatarURL} width="50" height="50"/>
+                </Col>
+                <Col>
+                  <h5>Results:</h5>
+                  <Card className="my-3">
+                    <Container>
+                      <p>Would you rather {questionText1}</p>
+                      <ProgressBar style={{height: "1.5rem"}} variant="info" now={optionOneVotesShare} label={`${optionOneVotesShare}%`}/>
+                      <div className="text-center">{optionOneVotes} out of {total}</div>
+                    </Container>
+                  </Card>
+                  <Card className="my-3">
+                    <Container>
+                      <p>Would you rather {questionText2}</p>
+                      <ProgressBar style={{height: "1.5rem"}} variant="info" now={optionTwoVotesShare} label={`${optionTwoVotesShare}%`}/>
+                      <div className="text-center">{optionTwoVotes} out of {total}</div>
+                    </Container>
+                  </Card>
+                </Col>
+              </Row>
+            </Container>
+          </Card>
+        </div>
+      </div>
     );
   }
 }

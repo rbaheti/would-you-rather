@@ -50,37 +50,39 @@ class Login extends Component {
 
     const usersArr = Object.values(this.props.users);
     return (
-      <div>
-        <Card style={{width: "30rem"}} className="m-3">
-          <Card.Body>
-            <div className="p-2 text-center">
-              <Card.Title>Welcome to the Would You Rather App!</Card.Title>
-              <p>Please sign in to continue</p>
-            </div>
-            <div className="p-3 text-center">
-              <img src={logo} width="250" height="220"/>
-            </div>
-            <Form>
-              <Form.Group controlId="userDropdown">
-                <Dropdown onSelect={this.onSelect}>
-                  {this.getDropdownToggle()}
+      <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column">
+          <Card style={{width: "30rem"}} className="m-3">
+            <Card.Body>
+              <div className="p-2 text-center">
+                <Card.Title>Welcome to the Would You Rather App!</Card.Title>
+                <p>Please sign in to continue</p>
+              </div>
+              <div className="p-3 text-center">
+                <img src={logo} width="250" height="220"/>
+              </div>
+              <Form>
+                <Form.Group controlId="userDropdown">
+                  <Dropdown onSelect={this.onSelect}>
+                    {this.getDropdownToggle()}
 
-                  <Dropdown.Menu>
-                    {usersArr.map(user => 
-                      <Dropdown.Item eventKey={user.id} key={user.id}>
-                        <img src={getAvatar(user.avatarURL)} width="25" height="22"/> {user.name} 
-                      </Dropdown.Item>
-                    )}
-                  </Dropdown.Menu>
-                </Dropdown>  
-              </Form.Group>
+                    <Dropdown.Menu>
+                      {usersArr.map(user => 
+                        <Dropdown.Item eventKey={user.id} key={user.id}>
+                          <img src={getAvatar(user.avatarURL)} width="25" height="22"/> {user.name} 
+                        </Dropdown.Item>
+                      )}
+                    </Dropdown.Menu>
+                  </Dropdown>  
+                </Form.Group>
 
-              <Button variant="primary" type="submit" onClick={this.handleSubmit} block>
+                <Button variant="primary" type="submit" onClick={this.handleSubmit} block>
             Sign In
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
     );
   }

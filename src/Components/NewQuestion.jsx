@@ -53,26 +53,28 @@ class NewQuestion extends Component {
     }
 
     return (
-      <div>
-        <Card style={{width: "30rem"}} className="m-3">
-          <Card.Body>
-            <Card.Title>Create New Question</Card.Title>
-            <Form>
-              <Form.Group controlId="formBasicEmail">
-                <Form.Label><strong>Would you rather...</strong></Form.Label>
-                <Form.Control type="text" placeholder="Enter option one text here" value={this.state.option1} onChange={e => this.handleChange(e, "option1")} />
-              </Form.Group>
+      <div className="d-flex justify-content-center">
+        <div className="d-flex flex-column">
+          <Card style={{width: "30rem"}} className="m-3">
+            <Card.Body>
+              <Card.Title>Create New Question</Card.Title>
+              <Form>
+                <Form.Group controlId="formBasicEmail">
+                  <Form.Label><strong>Would you rather...</strong></Form.Label>
+                  <Form.Control type="text" placeholder="Enter option one text here" value={this.state.option1} onChange={e => this.handleChange(e, "option1")} />
+                </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
-                <Form.Label>OR</Form.Label>
-                <Form.Control type="text" placeholder="Enter option two text here" value={this.state.option2} onChange={e => this.handleChange(e, "option2")}/>
-              </Form.Group>
-              <Button variant="primary" type="submit" onClick={this.handleSubmit} block>
-            Submit
-              </Button>
-            </Form>
-          </Card.Body>
-        </Card>
+                <Form.Group controlId="formBasicPassword">
+                  <Form.Label>OR</Form.Label>
+                  <Form.Control type="text" placeholder="Enter option two text here" value={this.state.option2} onChange={e => this.handleChange(e, "option2")}/>
+                </Form.Group>
+                <Button variant="primary" type="submit" onClick={this.handleSubmit} block>
+                  Submit
+                </Button>
+              </Form>
+            </Card.Body>
+          </Card>
+        </div>
       </div>
     );
   }

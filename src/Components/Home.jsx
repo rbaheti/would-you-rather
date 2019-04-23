@@ -43,19 +43,21 @@ class Home extends Component {
     });
 
     return (
-      <div className="m-3">
-        <Nav fill variant="tabs" defaultActiveKey={unansweredTabKey} onSelect={k => this.handleSelect(k)} className="border" style={{width: "30rem"}}>
-          <Nav.Item>
-            <Nav.Link eventKey={unansweredTabKey}>Unanswered Questions</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link eventKey={answeredTabKey}>Answered Questions</Nav.Link>
-          </Nav.Item>
-        </Nav>
-        {this.state.selectedTabKey === unansweredTabKey
-          ? unansweredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={false}/>)
-          : answeredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={true}/>)
-        }
+      <div className="d-flex justify-content-center">
+        <div className="m-3 d-flex flex-column">
+          <Nav fill variant="tabs" defaultActiveKey={unansweredTabKey} onSelect={k => this.handleSelect(k)} className="border" style={{width: "30rem"}}>
+            <Nav.Item>
+              <Nav.Link eventKey={unansweredTabKey}>Unanswered Questions</Nav.Link>
+            </Nav.Item>
+            <Nav.Item>
+              <Nav.Link eventKey={answeredTabKey}>Answered Questions</Nav.Link>
+            </Nav.Item>
+          </Nav>
+          {this.state.selectedTabKey === unansweredTabKey
+            ? unansweredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={false}/>)
+            : answeredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={true}/>)
+          }
+        </div>
       </div>
     );
   }
