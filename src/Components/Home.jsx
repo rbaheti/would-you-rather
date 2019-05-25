@@ -54,7 +54,7 @@ class Home extends Component {
             </Nav.Item>
           </Nav>
           {this.state.selectedTabKey === unansweredTabKey
-            ? unansweredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={false}/>)
+            ? unansweredQuestions.sort((a, b) => b.timestamp - a.timestamp).map(item => <QuestionsList key={item.id} question={item} answeredTabKey={false}/>)
             : answeredQuestions.map(item => <QuestionsList key={item.id} question={item} answeredTabKey={true}/>)
           }
         </div>

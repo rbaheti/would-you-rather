@@ -1,5 +1,4 @@
-
-export const RECEIVE_QUESTIONS = "RECEIVE_QUESTIONS";
+import {RECEIVE_QUESTIONS} from "./types";
 
 export function receiveQuestions(questions) {
   return {

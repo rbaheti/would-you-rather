@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {connect} from "react-redux";
 import {Card, Container, Row, Col, ProgressBar} from "react-bootstrap";
+import {Redirect} from "react-router-dom";
 import {getAvatar} from "../utils/helper";
 
 import {saveQuestionAnswer} from "../utils/api";
@@ -24,7 +25,11 @@ class PollStats extends Component {
   }
 
   render() {
-    const {questions, users} = this.props;
+    const {authedUser, questions, users} = this.props;
+    if (authedUser === null) {
+      return <Redirect to={"/"} />;
+    }
+
     if (questions === undefined || users === undefined) {
       return <p>Questions OR Users array is undefined!</p>;
     }

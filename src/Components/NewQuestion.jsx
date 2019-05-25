@@ -10,7 +10,8 @@ class NewQuestion extends Component {
 
   state = {
     option1: "",
-    option2: ""
+    option2: "",
+    formSubmitted: false
   }
 
   handleChange = (e, optionId) => {
@@ -38,10 +39,11 @@ class NewQuestion extends Component {
         text: this.state.option2.trim()
       }
     };
-    this.setState ({
-      option1: "",
-      option2: ""
-    });
+    if (newQuestion.optionOne.text === "" || newQuestion.optionTwo.text === "") {
+      return null;
+    }
+
+    this.setState ({formSubmitted: true});
     saveQuestion(newQuestion)
       .then(this.props.dispatch(handleInitialData()));
   }
@@ -50,6 +52,10 @@ class NewQuestion extends Component {
     const {authedUser} = this.props;
     if (authedUser === null) {
       return <Redirect to={"/"} />;
+    }
+
+    if (this.state.formSubmitted) {
+      return <Redirect to={"/home"} />;
     }
 
     return (

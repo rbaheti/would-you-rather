@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react";
-import {BrowserRouter as Router, Route} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import "./App.css";
 import {connect} from "react-redux";
 
@@ -24,12 +24,14 @@ class App extends Component {
           <div className="container">
             <NavBar />
             <div>
-              <Route path="/" exact component={Home} />
-              <Route path="/home" exact component={Home} />
-              <Route path="/leaderboard" exact component={LeaderBoard} />
-              <Route path="/new" exact component={NewQuestion} />
-              <Route path="/view-poll/:qid" exact component={Vote} />
-              <Route path="/poll-stats/:qid" exact component={PollStats} />
+              <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/home" exact component={Home} />
+                <Route path="/leaderboard" exact component={LeaderBoard} />
+                <Route path="/new" exact component={NewQuestion} />
+                <Route path="/view-poll/:qid" exact component={Vote} />
+                <Route path="/poll-stats/:qid" exact component={PollStats} />
+              </Switch>
             </div>
           </div>
         </Fragment>
